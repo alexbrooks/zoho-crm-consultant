@@ -31,6 +31,7 @@
             padding: 2rem 0;
             text-align: center;
             border-bottom: 1px solid #eee;
+            border-radius: 0 0 15px 15px;
         }
 
         .headshot {
@@ -106,26 +107,6 @@
             border-radius: 12px;
             border-left: 4px solid #3498db;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-item::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(52, 152, 219, 0.05), transparent);
-            animation: shimmer 6s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            50% { transform: translateX(0%) translateY(0%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
 
         .service-item h3 {
@@ -248,108 +229,89 @@
             font-size: 0.9rem;
         }
 
-        /* Dark Mode Toggle */
-        .dark-mode-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 10px 15px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            z-index: 1001;
-        }
-
-        .dark-mode-toggle:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
         /* Dark Mode Styles */
-        body.dark-mode {
-            background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
-        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+            }
 
-        body.dark-mode .header {
-            background: #34495e;
-            border-bottom: 1px solid #555;
-        }
+            .header {
+                background: #34495e;
+                border-bottom: 1px solid #555;
+            }
 
-        body.dark-mode .header h1 {
-            color: #ecf0f1;
-        }
+            .header h1 {
+                color: #ecf0f1;
+            }
 
-        body.dark-mode .tagline {
-            color: #bdc3c7;
-        }
+            .tagline {
+                color: #bdc3c7;
+            }
 
-        body.dark-mode .main {
-            background: #2c3e50;
-            color: #ecf0f1;
-        }
+            .main {
+                background: #2c3e50;
+                color: #ecf0f1;
+            }
 
-        body.dark-mode .intro {
-            color: #bdc3c7;
-        }
+            .intro {
+                color: #bdc3c7;
+            }
 
-        body.dark-mode .services h2,
-        body.dark-mode .work-options h2,
-        body.dark-mode .contact h2 {
-            color: #ecf0f1;
-        }
+            .services h2,
+            .work-options h2,
+            .contact h2 {
+                color: #ecf0f1;
+            }
 
-        body.dark-mode .service-item {
-            background: linear-gradient(135deg, #34495e, #2c3e50);
-            color: #ecf0f1;
-            border-left-color: #3498db;
-        }
+            .service-item {
+                background: linear-gradient(135deg, #34495e, #2c3e50);
+                color: #ecf0f1;
+                border-left-color: #3498db;
+            }
 
-        body.dark-mode .service-item h3 {
-            color: #ecf0f1;
-        }
+            .service-item h3 {
+                color: #ecf0f1;
+            }
 
-        body.dark-mode .service-item p {
-            color: #bdc3c7;
-        }
+            .service-item p {
+                color: #bdc3c7;
+            }
 
-        body.dark-mode .work-options {
-            background: linear-gradient(135deg, #34495e, #2c3e50);
-            border-color: #555;
-        }
+            .work-options {
+                background: linear-gradient(135deg, #34495e, #2c3e50);
+                border-color: #555;
+            }
 
-        body.dark-mode .option {
-            background: #2c3e50;
-            border-color: #555;
-            color: #ecf0f1;
-        }
+            .option {
+                background: #2c3e50;
+                border-color: #555;
+                color: #ecf0f1;
+            }
 
-        body.dark-mode .option h3 {
-            color: #ecf0f1;
-        }
+            .option h3 {
+                color: #ecf0f1;
+            }
 
-        body.dark-mode .form-group input,
-        body.dark-mode .form-group textarea,
-        body.dark-mode .form-group select {
-            background: #34495e;
-            border-color: #555;
-            color: #ecf0f1;
-        }
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                background: #34495e;
+                border-color: #555;
+                color: #ecf0f1;
+            }
 
-        body.dark-mode .form-group input::placeholder,
-        body.dark-mode .form-group textarea::placeholder {
-            color: #95a5a6;
-        }
+            .form-group input::placeholder,
+            .form-group textarea::placeholder {
+                color: #95a5a6;
+            }
 
-        body.dark-mode .form-group label {
-            color: #ecf0f1;
-        }
+            .form-group label {
+                color: #ecf0f1;
+            }
 
-        body.dark-mode .footer {
-            color: #bdc3c7;
+            .footer {
+                color: #bdc3c7;
+            }
         }
         @media (max-width: 600px) {
             .header h1 {
@@ -370,12 +332,9 @@
 </head>
 <body>
     <div class="container">
-        <!-- Dark Mode Toggle -->
-        <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
-
         <!-- Header -->
         <div class="header">
-            <img src="alex-brooks-headshot.jpg" alt="Alex Brooks headshot" class="headshot">
+            <img src="alex-brooks-headshot.jpg" alt="Alex Brooks" class="headshot">
             <h1>Zoho CRM Implementation Specialist</h1>
             <p class="tagline">Helping businesses streamline their sales process with expert CRM setup</p>
         </div>
@@ -470,26 +429,6 @@
     </div>
 
     <script>
-        // Dark mode toggle
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-            const toggle = document.querySelector('.dark-mode-toggle');
-            const isDark = document.body.classList.contains('dark-mode');
-            toggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
-            
-            // Save preference
-            localStorage.setItem('darkMode', isDark);
-        }
-
-        // Load saved preference
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedMode = localStorage.getItem('darkMode');
-            if (savedMode === 'true') {
-                document.body.classList.add('dark-mode');
-                document.querySelector('.dark-mode-toggle').textContent = '☀️ Light Mode';
-            }
-        });
-
         // Simple form handling
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
