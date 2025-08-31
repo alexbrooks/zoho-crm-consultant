@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoho CRM Implementation Specialist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .headshot {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            border: 4px solid #3498db;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* Main Content */
+        .main {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #555;
+            text-align: center;
+        }
+
+        .services {
+            margin: 3rem 0;
+        }
+
+        .services h2 {
+            font-size: 1.6rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .service-item h3 {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .work-options {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .work-options h2 {
+            font-size: 1.6rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .option {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #eee;
+        }
+
+        .option h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Form */
+        .contact {
+            margin: 3rem 0;
+        }
+
+        .contact h2 {
+            font-size: 1.6rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #2980b9;
+        }
+
+        .submit-btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .main {
+                margin: 1rem 0;
+                padding: 2rem 1.5rem;
+            }
+            
+            .service-list,
+            .options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <img src="https://via.placeholder.com/120x120/3498db/ffffff?text=Your+Photo" alt="Professional headshot" class="headshot">
+            <h1>Zoho CRM Implementation Specialist</h1>
+            <p class="tagline">Helping businesses streamline their sales process with expert CRM setup</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main">
+            <div class="intro">
+                <p>Hi! I'm a Zoho CRM specialist who helps businesses get the most out of their customer relationship management system. Whether you need a complete setup from scratch or want to optimize your existing CRM, I can help you create a system that actually works for your team.</p>
+            </div>
+
+            <!-- Services -->
+            <div class="services">
+                <h2>What I Can Help You With</h2>
+                <div class="service-list">
+                    <div class="service-item">
+                        <h3>CRM Setup & Configuration</h3>
+                        <p>Complete Zoho CRM installation, custom fields, workflows, and automation to match your sales process.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Data Migration</h3>
+                        <p>Clean transfer of your existing customer data from spreadsheets, old CRMs, or other systems.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Team Training</h3>
+                        <p>Hands-on training for your team to ensure everyone knows how to use the system effectively.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Integrations</h3>
+                        <p>Connect your CRM with email, accounting software, marketing tools, and other business applications.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work Options -->
+            <div class="work-options">
+                <h2>How We Can Work Together</h2>
+                <div class="options">
+                    <div class="option">
+                        <h3>Project-Based Consultant</h3>
+                        <p>I work with you on a specific project to get your CRM set up, then hand it over to your team. Perfect for one-time implementations or major upgrades.</p>
+                    </div>
+                    <div class="option">
+                        <h3>Internal Team Member</h3>
+                        <p>I join your team as a dedicated CRM manager, handling ongoing optimization, training, and support. Great for businesses that want continuous CRM improvement.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact">
+                <h2>Let's Talk About Your CRM Needs</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Company (optional)</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="workType">How would you like to work together?</label>
+                        <select id="workType" name="workType">
+                            <option value="">Select an option</option>
+                            <option value="project">Project-based consultant</option>
+                            <option value="internal">Internal team member</option>
+                            <option value="discuss">Let's discuss what works best</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Tell me about your CRM situation</label>
+                        <textarea id="message" name="message" placeholder="What's your current setup? What challenges are you facing? What are you hoping to achieve?" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Ready to transform your sales process with Zoho CRM?</p>
+        </div>
+    </div>
+
+    <script>
+        // Simple form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            // Basic validation
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !message) {
+                alert('Please fill in your name, email, and message.');
+                return;
+            }
+            
+            // Simulate sending
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Thanks for reaching out! I\'ll get back to you soon.');
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
