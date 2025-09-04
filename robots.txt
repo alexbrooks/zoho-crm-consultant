@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alexbrooks.co.uk/sitemap.xml
+Sitemap: https://zoho-consultant.services/sitemap.xml
